@@ -17,28 +17,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
+  <form action="http://localhost:3000/dbsave" method="POST">
   <table class="table table-bordered table-inverse table-responsive">
     <thead class="thead-inverse">
       <tr>
-        <th>Teset</th>
-        <th>OK</th>
+        <th colspan="3" align="center">Welcome To TaskME Application</th>
+      </tr>
+      <tr>
+        <th>Task Name</th>
+        <th>Task Value</th>
         <th></th>
       </tr>
       </thead>
       <tbody>
         <tr>
-          <td scope="row">34323432424</td>
-          <td>er</td>
-          <td>fdf</td>
-        </tr>
-        <tr>
-          <td scope="row"></td>
-          <td></td>
-          <td></td>
+          <td scope="row"><input type="text" name="name" /></td>
+          <td><input type="text" name="age" /></td>
+          <td> <button type="submit">Save Task</button></td>
         </tr>
       </tbody>
   </table>
-  
+</form>
   </body>
 </html>
 
