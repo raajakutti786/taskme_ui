@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.post('/dbsave', urlencodedParser, (req, res) => {
   //console.log(req);
-  res.send(localApp.updateRequest ("UI ","Layer"));
+  res.send(localApp.updateRequest ("Returned From DB ","Layer"));
 });
 
 app.listen(PORT, HOST);
