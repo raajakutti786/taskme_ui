@@ -12,7 +12,7 @@ const HOST = 'localhost';
 //var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
-// App
+// App  
 const app = express();
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname +'/templates/index.html'));
