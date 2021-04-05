@@ -1,17 +1,27 @@
-FROM python:3.8-slim-buster
+FROM node:14
 
-RUN mkdir app
+# RUN mkdir app
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-#COPY requirements.txt requirements.txt
+# Create app directory
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+
+# Bundle app source
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
 COPY . .
 
-RUN pip3 install -r requirements.txt
+EXPOSE 5000
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
-
+CMD [ "node", "app.js" ]
 
 
 
