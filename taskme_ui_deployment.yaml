@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: taskme-ui-deployment
+  labels:
+      app: taskme-ui
 spec:
   replicas: 1
   selector:
@@ -17,7 +19,7 @@ spec:
         image: dvzpoc/taskmeui:latest
         ports:
         - containerPort: 5000
-        imagePullPolicy: ""
+        imagePullPolicy:  
       restartPolicy: Always
       serviceAccountName: ""
       volumes: null

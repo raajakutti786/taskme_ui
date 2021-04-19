@@ -10,11 +10,12 @@ const https = require('https')
 const axios = require('axios')
 const FormData = require('form-data');
 const http = require ('http')
+var os = require('os');
 
 
 // Constants
 const PORT = 5000;
-const HOST = 'localhost';
+const HOST = os.hostname();
 
 //var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({extended: false})
@@ -76,7 +77,7 @@ const data = JSON.stringify({
 
 //HTTP Options
 var options = {
-  host: 'localhost',
+  host: 'taskme-db-service',
   port: 3000,
   path: '/dbsave',
   method: 'POST',
@@ -151,7 +152,7 @@ app.post('/load', urlencodedParser, (req, res) => {
 
   //-------------------------------------------------------------------------------
   axios
-  .get('http://localhost:3000/load', {
+  .get('http://taskme-db-service:3000/load', {
     todo: 'Buy the milk'
   })
   .then(res1 => {
